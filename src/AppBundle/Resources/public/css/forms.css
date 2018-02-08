@@ -1,0 +1,135 @@
+input[type="text"], textarea, select, input[type="password"], input[type="email"], input[type="number"] {
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 12px 20px;
+}
+#appbundle_adservices_services{
+    width: 350px;
+}
+#appbundle_adservices_price{
+    width:180px;
+}
+textarea{
+    height: 100px;
+}
+button{
+    cursor: pointer;
+    border: 0;
+    background: none;
+}
+
+.form-collection-element{
+    margin: 5px 15px;
+    line-height: 50px;
+}
+
+.search-form input[type="text"], .search-form select {
+    width: 250px;
+    margin: 5px;
+}
+.services-edit .full-size-field{
+    width: 90% !important;
+    margin: 10px auto;
+}
+.ad-row select {
+    width: 194px;   
+}
+.edit-price input[type="number"], .edit-price select,
+.edit-durability input[type="number"], .edit-durability select {
+    width: 97px;
+    height: 45px;
+}
+.search-price input[type="text"]{
+    width: 98px;   
+}
+
+select {
+    background-color: #f3f3f3;
+}
+
+textarea {
+    resize: none;
+}
+
+.green-submit {
+    width:150px;
+    background-color: #7b8e1f;
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-decoration: none;
+    margin: 5px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.popup-content{
+    text-align: center;
+}
+
+.form-horizontal label {
+    display: inline-block;
+    width: 40%;
+}
+
+.form-horizontal .form-block {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form-horizontal input[type="text"], .form-horizontal textarea, .form-horizontal select,  .form-horizontal input[type="password"] {
+    display: inline-block;
+    width: 60%;
+}
+
+.form-horizontal .full-size-field input[type="text"], .form-horizontal .full-size-field textarea, .form-horizontal .full-size-field select,  .form-horizontal .full-size-field input[type="password"],.form-horizontal .full-size-field input[type="number"]{
+    width: 100%;
+}
+
+.vich-image img {
+    max-height: 350px;
+    max-width: 100%;
+}
+
+.fileContainer {
+    position: relative;
+    font-size: 14px;
+    color: #7b8e1f;
+    border: none;
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fileContainer:before{
+    display: inline-block;
+    content: '.';
+    color: #000\9;
+    width: 10px;
+    height: 15px;
+    background-image:  url(../img/sent.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fileContainer:hover {
+    color: #415403;
+}
+
+.fileContainer [type=file] {
+    cursor: inherit;
+    display: block;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}

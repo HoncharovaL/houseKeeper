@@ -1,0 +1,25 @@
+
+<div class="popup services-edit">
+    <div class="orange-header text-center">
+        <div class="text">Редактировать</div>
+    </div>
+    <div class="popup-content form-horizontal">
+        {{ form_start(edit_form, {'action':path('adservices_edit',{'idServices':app.request.get('idServices')})}) }}
+        <div class="services-main">
+            <span class="service-name">{{ form_widget(edit_form.services) }}</span>
+            <span class="service-price">{{ form_widget(edit_form.price) }}</span>
+        </div>
+        <div class="services-description full-size-field">
+            {{ form_widget(edit_form.description) }}
+        </div>
+        <div class="text-buttons right-block form-horizontal">
+            <button type="submit" class="green-href " >
+                <div class="left-block"><img class="button-image" src="{{asset('bundles/app/img/save-green.png')}}"/></div>
+                <div class="left-block big-text">Сохранить</div>
+            </button> 
+        </div>
+        {{ form_end(edit_form) }}
+        
+    </div>
+</div>
+
