@@ -4,6 +4,7 @@
     src: url(../fonts/Trebuchet.ttf);
 }
 body{
+    margin: 0;
     font-family: Trebuchet;
     font-size: 12px;
     color: black;
@@ -39,7 +40,7 @@ body{
     width: 120px;
 }
 .main-container{
-    width: 1280px;
+    width: 100%;
     margin: 0 auto;
 }
 .wide-container{
@@ -66,48 +67,32 @@ body{
     background-color: white;
     padding-bottom: 30px;
 }
-.peach-container{
-    background-color:#ffffaf;
-    border: 1px solid #bebe99;
+.clear-blue-container{
+    background-color: #edf7f7;
 }
-.peach-container .ad-footer{
-    border: 1px solid #bebe99;
+.clear-blue-container .ad-content{
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
 }
-.peach-container .cell{
-    border-color: #bebe99 !important;
+.clear-blue-container .ad-footer{
+    border: 1px solid lightgray;
+}
+.clear-blue-container .bordered-both-sides{
+    border-color: lightgray;
 }
 .colored-container, .orange-header, .popup-header, .login-container{
     color: white;
 }
-.serrated-yellow {
-    position: relative;
-    z-index: 1;
-    padding: 40px 20px;
-    margin-top: -5px;
-    border-top: 5px solid transparent;
-    background-image: linear-gradient(#facb01, #facb01), linear-gradient(to bottom right, transparent 50.5%, #facb01 50.5%), linear-gradient(to bottom left, transparent 50.5%, #facb01 50.5%);
-    background-repeat: repeat, repeat-x, repeat-x;
-    background-position: 0 0, 10px 0, 10px 0;
-    background-size: auto auto, 10px 10px, 10px 10px;
-    background-clip: padding-box, border-box, border-box;
-    background-origin: padding-box, border-box, border-box, border-box, border-box;
+.dark-blue-container {
+    padding: 70px 20px;
+    background-color: #4ca5f4;
 }
-.serrated-gray{
-    position: relative;
-    z-index: 1;
-    padding: 40px 20px;
-    margin-top: -5px;
-    border-top: 5px solid transparent;
-    background-image: linear-gradient(#f2f2f2, #f2f2f2), linear-gradient(to bottom right, transparent 50.5%, #f2f2f2 50.5%), linear-gradient(to bottom left, transparent 50.5%, #f2f2f2 50.5%);
-    background-repeat: repeat, repeat-x, repeat-x;
-    background-position: 0 0, 10px 0, 10px 0;
-    background-size: auto auto, 10px 10px, 10px 10px;
-    background-clip: padding-box, border-box, border-box;
-    background-origin: padding-box, border-box, border-box, border-box, border-box;
+.light-blue-container{
+    padding: 70px 20px;
+    background-color: #62b5ff;
 }
-.extra-search-container{
+.gray-container{
     padding: 40px 20px;
-    background-color: #fcab01;
 }
 .block:after,
 .ad-row:after,
@@ -158,30 +143,29 @@ body{
 /*photo block settings*/
 .photo-block{
     text-align: center;
-    width: 29%;
 }
 .photo-block img{
-    height: 325px;
-    width: 300px;
+    height: 250px;
+    width: 325px;
     object-fit: cover;
 }
 .teacher-phone{
-    width: 300px;
+    width: 325px;
     height:50px;
     text-align: center;
     line-height: 50px;
     color:white;
     font-size: 16px;
     font-weight: bold; 
-    background-color: #facb01;
+    background-color: #2194d8;
 }
 .no-phone{
     text-align: center;
     color:white;
-    width: 300px;
+    width: 325px;
     height:50px;
     line-height: 25px;
-    background-color: #facb01;
+    background-color: #2194d8;
 }
 .user-item .photo-block img{
     max-width: 100%;
@@ -189,7 +173,7 @@ body{
 }
 /*info block settings*/
 .info-block{
-    width: 68%;
+    width: 650px;
 }
 .user-about{
     height: 150px;
@@ -200,14 +184,16 @@ body{
 }
 /*ads settings*/
 .ad-head{
-    background-color: #facb01;
+    background-color: #2194d8;
     height: 40px;
     color:white;
     padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
 }
 .ad-content, .teacher-content{
-    margin: 30px 20px;
-    height: 194px;
+    padding: 30px 20px;
+    height: 124px;
 }
 .ads-container .ad-content{
     height: 85px;
@@ -236,7 +222,28 @@ body{
 
 .ad-footer, .teacher-footer{
     width: 100%;
-    border: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    box-sizing: border-box;
+}
+.ad-footer-info{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+.ad-footer-info .info-path{
+    margin: 0 10px;
+    width: 150px;
+    text-align: center;
+}
+.ad-footer .ad-footer-rating{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: #2194d8;
 }
 .ad-footer .cell, .teacher-footer .cell{
     display: table;
@@ -279,6 +286,15 @@ body{
 .teacher-name, .ad-date{
     font-size: 14px;
     margin-bottom: 12px; 
+}
+.teacher-name{
+    font-weight: bold;
+    font-size: 16px;
+    width: 300px;
+}
+.bordered-both-sides{
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
 }
 .teacher-rating{
     height: 25px;
@@ -330,8 +346,14 @@ a{
 .red-href:hover{
     color: #A10608 !important;
 }
-.dashed-href{
-    border-bottom:  1px white dashed;
+.underlined-href{
+    border-bottom:  1px white solid;
+}
+.interactive{
+    opacity: 0.8;
+}
+.interactive:hover{
+    opacity: 1;
 }
 
 /*buttons settings*/
@@ -363,67 +385,73 @@ a{
     font-size: 14px;
 }
 .header-container{
-    background-image: url(../img/header-top.png);
+    padding: 0 16%;
+    background-image: url(../img/header-background.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    height: 45px;    
+    background-position: 0 0;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
 }
 .header-container .header-logo{
-    width: 80px;
-    display: inline-block;
-    float: left;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 200px;
+    width: 200px;
+
 }
 .header-logo img{
-    max-width: 80px;
-    height: 35px;
-    object-fit: contain; 
+    max-width: 200px;
+    height: 50px;
+    object-fit: contain;
 }
 .header-bottom{
     display: block;
-    background-image: url(../img/header-bottom.png);
+    background-image: url(../img/header-background.png);
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
-    height: 323px;
+    height: 431px;
 }
 .header-bottom .howsmart-about, .header-bottom .howsmart-head{
-    padding-left: 700px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+}
+.promo-container{
+    text-align: center;
+    width: 820px;
+    margin: 0 auto;
 }
 .header-bottom .howsmart-head{
     padding-top: 75px;
     font-size: 30px;
     font-weight: bold;
 }
-.howsmart-about div, .howsmart-head div {
-    margin: 10px 0;
+.howsmart-about {
+    font-size: 20px;
+}
+.extra-search-button{
+    display: inline-block;
+    margin: 0 10px;
 }
 
 /*menu settings*/
 .header-container .menu-container{
-    width: 790px;
+
     height: 45px;
-    display: inline-block;
-    float: right;
-    padding-right: 200px;
     text-align: right;
 }
 .menu-container .menu-item{
     display: inline-block;
-    margin: 10px 15px;
     text-align: center;
-    padding: 5px 0;
+    padding: 10px 15px;
+    border:1px solid transparent;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 .menu-href{
-    padding: 5px 0;
+
 }
 .menu-item:hover{
-    margin: 9px 14px;
-    border:1px #facb01 solid;
+    border:1px solid #90cbff;
 }
 .dropdown-content {
     background-color:black;
@@ -450,45 +478,42 @@ a{
 }
 /*footer settings*/
 .footer{
-    height: 250px;
+    height: 200px;
     width: 100%;
-}
-.footer img{
-    margin: 100px 590px; 
+    padding: 75px 0;
+    text-align: center;
+    box-sizing: border-box;
 }
 /*place cv block*/
 .place-cv{
-    background-image: url(../img/place-cv.png);
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-    height: 145px;     
+    height: 145px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #61b5ff;
 }
 .place-cv .place-cv-head, .place-cv .place-cv-text{
     padding-bottom: 10px;
+    text-align: center;
 }
 .place-cv-text, .place-cv-button{
     display: inline-block;
 }
 .place-cv-text{
-    float: left;
-    margin-left: 430px;
-    margin-top: 50px;
+    font-size: 18px;
+    margin-right: 100px;
 }
 .place-cv-head{
     font-size: 30px;
 }
-.place-cv-button{
-    height: 145px;
-    line-height:145px;
-    padding: 0 40px;
-}
-.green-button{
-    background-color: #7b8e1f;
-    font-size: 15px;
+.light-blue-button{
+    background-color: #90cbff;
+    font-size: 20px;
     text-align: center;
-    line-height: 50px;
-    padding: 10px 50px;
+    line-height: 75px;
+    font-size: 20px;
+    padding: 20px 75px;
+    border-radius: 3px;
 }
 /*services and subjects lists*/
 .services-item .list-button-container{
@@ -602,28 +627,20 @@ a{
 }
 /*search*/
 .search-form{
-    width: 900px;
     margin: auto;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-area{
+    margin-right: 15px;
 }
 .price-label {
     height: 45px;
     line-height: 45px;
 }
-.search-form .col1, .search-form .col2,.search-form .col3{
-    width: 300px;
-    display: inline-block;
-    margin-right: 10px;
-}
-.search-form .col1, .search-form .col2, .search-form .col3{
-    float: left;
-}
-.search-form .col3{
-    width: 200px;
-}
-.extra-search-container .col3{
-    line-height: 89px; 
-}
+
 /*register and lodin*/
 .register-success, .register-success-head{
     font-size: 14px;

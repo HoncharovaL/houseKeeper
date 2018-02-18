@@ -32,6 +32,12 @@ button{
     width: 250px;
     margin: 5px;
 }
+.search-area-big input[type="text"]{
+    width: 350px;
+}
+.search-area-big{
+    width: 350px;
+}
 .services-edit .full-size-field{
     width: 90% !important;
     margin: 10px auto;
@@ -56,16 +62,14 @@ textarea {
     resize: none;
 }
 
-.green-submit {
-    width:150px;
-    background-color: #7b8e1f;
+.light-blue-submit {
+    background-color: #90cbff;
     border: none;
     color: white;
-    padding: 8px 32px;
+    padding: 15px 30px;
     text-decoration: none;
-    margin: 5px 20px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
 }
 .popup-content{
     text-align: center;
@@ -132,4 +136,7 @@ textarea {
     right: 0;
     text-align: right;
     top: 0;
+}
+input{
+    border-radius: 3px;
 }
