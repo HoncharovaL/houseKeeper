@@ -32,6 +32,10 @@ button{
     width: 250px;
     margin: 5px;
 }
+.search-currency select{
+    width: 125px;
+    cursor: pointer;
+}
 .search-area-big input[type="text"]{
     width: 350px;
 }

@@ -15,40 +15,25 @@
 
             <div class="search-area search-area-big">
                 {{ form_widget(form.search, {'attr':{'placeholder':"Специализация"}})}}
+                {#ex - subject#}
             </div>
-
-
             <div class="search-area">
                 {{ form_widget(form.town, {'attr':{'placeholder':"Город"}})}}   
             </div>
-
-
             <div class="search-area">
                 <input class="light-blue-submit" type="submit" value="Найти помощника" />
                 <div class=" extra-search-button">
                     <a class="underlined-href interactive" onclick="$('.extra-search-container').toggleClass('hidden')">расширенный поиск</a> 
                 </div>
             </div>
-
-
-
         </div>
-
-
-
     </div>
     <div class="extra-search-container hidden light-blue-container">
         <div class="search-form">
             <div class="search-area">
-                {{ form_widget(form.place, {'placeholder':"Образование"})}}
-
+                {{ form_widget(form.place, {'placeholder':"Условия работы"})}}
             </div>
-            <div class="search-area">
-                {{ form_widget(form.area, {'attr':{'placeholder':"Область"}})}}
-            </div>
-            <div class="search-area">
-                {{ form_widget(form.currency, {'placeholder':"Опыт работы"})}}
-            </div>
+            {#removed - form.area#}
             <div class="search-area">
                 <div class="search-price">
                     <span class=" min">
@@ -57,15 +42,16 @@
                     <span class="max">
                         {{ form_widget(form.pricemax, {'attr':{'placeholder':"Цена до"}})}}
                     </span>
+                    <span class="search-currency">
+                        {{ form_widget(form.currency, {'placeholder':"Валюта"})}}
+                    </span>
                 </div>
-
             </div>
             <div class="search-area">
                 <input class="light-blue-submit" type="submit" value="Найти" />
             </div>
         </div>
     </div>
-
     {{ form_end(form) }}
     <div class="gray-container">
         {% for ad in ads %}
@@ -87,7 +73,7 @@
                         {%endif%}
                     </div>
                     <div class="{{ad.services ? ad.services.idServices ==1 ? 'clear-blue-container' : 'white-container':'white-container'}} info-block short-block right-block">
-                        <div class="ad-head">    
+                        <div class="ad-head dark-blue-container">    
                             <div>
                                 <div class="teacher-name"><a href="{{path('user_show', {'id': ad.user.id})}}">{{ ad.user }}</a></div>
                                 <div class="ad-subject">{{ ad.subject}}</div>
@@ -101,60 +87,45 @@
                         </div>
                         <div class="ad-content">
                             <div class='ad-description'>{{ ad.adText|length <= 300 ? ad.adText : ad.adText|slice(0, 300)~'...' }}</div>
-
+                            <a class="detail-href interactive" href="{{ path('ad_show', { 'idAd': ad.idAd }) }}"> Просмотр </a>
                         </div>
                         <div class="ad-footer">
-                            {#<div class="ad-place ">
-                                <div class='ad-area'>{{ ad.area }}</div>
-                            </div>  #} 
-                            <div class='ad-footer-info'>
                                 <div class='info-path'>
                                     {{ ad.town }}
                                 </div>
-                                <div class=" info-path bordered-both-sides">
-                                    {{ad.place}}
+                                <div class=" info-path">
+                                    {{ ad.user.education }}
                                 </div>
                                 <div class='info-path'>
+                                    {{ ad.user.experience }} 
+                                </div>
+                                <div class='info-path' >
                                     {{ad.place}}
                                 </div>
-                            </div>
-                            {#<div class="ad-online cell">
-                                Уроки online
-                                {% if ad.online==1%}
-                                    <img class="yes-no-image" src="{{ asset('bundles/app/img/yes.png') }}">
-                                {%else%}
-                                    <img class="yes-no-image" src="{{ asset('bundles/app/img/no.png') }}">
-                                {%endif%}
-                            </div>#}
-
-                            <div class='ad-footer-rating'>
-                                {{ ad.user.rating}}
-                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
-        </div>
-    {% endfor %}
-</div>
-<div class="place-cv colored-container light-blue-container">
-    <div class="place-cv-text">
-        <div class="place-cv-head">
-            Разместите своё объявление
-        </div>
-        <div>
-            и найдите отличную работу.
+            {% endfor %}
         </div>
     </div>
-    {% if is_granted('IS_AUTHENTICATED_FULLY')%}
-        <div class="place-cv-button">
-            <a class="light-blue-button" href="{{ path('user_show', { 'id': app.user.getId() }) }}">Разместить</a>
+    <div class="place-cv colored-container light-blue-container">
+        <div class="place-cv-text">
+            <div class="place-cv-head">
+                Разместите своё объявление
+            </div>
+            <div>
+                и найдите отличную работу.
+            </div>
         </div>
-    {%else%}
-        <div class="place-cv-button">
-            <a class="light-blue-button" href="{{ path("fos_user_security_login") }}">Разместить</a>
-        </div>
-    {%endif%}
-</div>
+        {% if is_granted('IS_AUTHENTICATED_FULLY')%}
+            <div class="place-cv-button">
+                <a class="light-blue-button" href="{{ path('user_show', { 'id': app.user.getId() }) }}">Разместить</a>
+            </div>
+        {%else%}
+            <div class="place-cv-button">
+                <a class="light-blue-button" href="{{ path("fos_user_security_login") }}">Разместить</a>
+            </div>
+        {%endif%}
+    </div>
 {% endblock %}

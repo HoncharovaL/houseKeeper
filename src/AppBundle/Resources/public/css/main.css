@@ -77,14 +77,12 @@ body{
 .clear-blue-container .ad-footer{
     border: 1px solid lightgray;
 }
-.clear-blue-container .bordered-both-sides{
-    border-color: lightgray;
-}
+
 .colored-container, .orange-header, .popup-header, .login-container{
     color: white;
 }
 .dark-blue-container {
-    padding: 70px 20px;
+    color:  white;
     background-color: #4ca5f4;
 }
 .light-blue-container{
@@ -123,10 +121,10 @@ body{
 .top-label{
     width: 100px !important;
     font-size: 16px !important;
-    background-color: #7b8e1f !important;
+    background-color: #2194d8 !important;
 }
 .image-with-overlay-label .overlay-label {
-    background-color: #facb01;
+    background-color: #2194d8;
     display: inline-block;
     width: 50px;
     height: 30px;
@@ -184,9 +182,7 @@ body{
 }
 /*ads settings*/
 .ad-head{
-    background-color: #2194d8;
     height: 40px;
-    color:white;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -200,7 +196,6 @@ body{
 }
 .ad-full-container .teacher-content, .ad-full-container .ad-content{
     height: auto !important;
-    padding: 10px 0;
 }
 .ad-admin-container .ad-content{
     height: 140px;
@@ -209,6 +204,11 @@ body{
     width: 90%;
     margin: auto;
 }
+.ad-price{
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .ad-row .left-block{
     height: 53px;
     line-height: 53px;
@@ -217,14 +217,14 @@ body{
     margin: 20px 0;
 }
 .ad-description{
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 .ad-footer, .teacher-footer{
     width: 100%;
     border-top: 1px solid #f2f2f2;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 50px;
     box-sizing: border-box;
@@ -234,29 +234,20 @@ body{
     justify-content: space-around;
     width: 500px;
 }
-.ad-footer-info .info-path{
-    margin: 0 10px;
-    width: 150px;
-    text-align: center;
+.info-path{
+    padding: 0 25px;
 }
-.ad-footer .ad-footer-rating{
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    color: #2194d8;
+.info-path{
+    border-right: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
 }
-.ad-footer .cell, .teacher-footer .cell{
-    display: table;
-    float: left;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
+.clear-blue-container .info-path{
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
 }
-.ad-footer .ad-place{
-    line-height: 25px;
-    text-align: right;
-    width: 249px;
-}
+
+
+
 .ad-footer .ad-service, .ad-footer .ad-servdate{
     width: 337px;
 }
@@ -272,29 +263,39 @@ body{
     border-right: 1px solid #f2f2f2;
     width: 125px;
 }
+.ad-footer-price{
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    color: #2194d8;
+    font-weight: bold;
+}
 .yes-no-image{
     width: 12px;
     height: 12px;
     object-fit: contain; 
 }
-.ad-footer .ad-price{
-    font-size: 16px;
-    font-weight: bold;
-    color: #7b8e1f;
-    width: 177px;
-}
-.teacher-name, .ad-date{
+.teacher-name{
     font-size: 14px;
     margin-bottom: 12px; 
+}
+.ad-date{
+    text-align: right;
 }
 .teacher-name{
     font-weight: bold;
     font-size: 16px;
     width: 300px;
+    margin-bottom: 12px;
 }
-.bordered-both-sides{
-    border-left: 1px solid #f2f2f2;
-    border-right: 1px solid #f2f2f2;
+.teacher-experience{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.bordered-bottom{
+    border-bottom: 1px solid #f2f2f2;
 }
 .teacher-rating{
     height: 25px;
@@ -350,7 +351,7 @@ a{
     border-bottom:  1px white solid;
 }
 .interactive{
-    opacity: 0.8;
+    opacity: 0.7;
 }
 .interactive:hover{
     opacity: 1;
@@ -562,10 +563,16 @@ a{
     margin: 20px 0;
 }
 /*messages and reviews*/
+.reviews-header{
+    font-size: 16px;
+    padding: 25px 0;
+} 
 .messages-photo img{
     width: 150px;
     height: 150px;
     object-fit: contain;
+    margin: 0 40px;
+    
 }
 .message-field{
     margin-top: 20px;
@@ -603,8 +610,7 @@ a{
     text-align: center;
 }
 .messages-item{
-    width: 80%;
-    margin: auto;
+    display: flex;
 }
 .right-message .message-block{
     float: right;
@@ -626,6 +632,9 @@ a{
     border-radius: 3px;
 }
 /*search*/
+.search-container{
+    padding: 70px 20px;
+}
 .search-form{
     margin: auto;
     text-align: center;
@@ -635,6 +644,15 @@ a{
 }
 .search-area{
     margin-right: 15px;
+}
+.search-price{
+    display: flex;
+}
+.search-currency{
+    width: 100px;
+    overflow: hidden;
+    display: block;
+    cursor: pointer;
 }
 .price-label {
     height: 45px;
