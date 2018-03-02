@@ -70,7 +70,16 @@ textarea {
     background-color: #90cbff;
     border: none;
     color: white;
-    padding: 15px 30px;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+.dark-blue-submit{
+    background-color: #4ca5f4;
+    border: none;
+    color: white;
+    padding: 10px 15px;
     text-decoration: none;
     cursor: pointer;
     font-size: 18px;
@@ -143,4 +152,17 @@ textarea {
 }
 input{
     border-radius: 3px;
+}
+.login-data input[type='text'], .login-data input[type='password'], .login-data input[type='email']{
+    padding: 10px 15px;
+    width: 300px;
+    box-sizing: border-box;
+    
+}
+.login-container .dark-blue-submit {
+    width: 300px;
+    box-sizing: border-box;
+}
+#remember_me{
+    margin-right: 10px; 
 }

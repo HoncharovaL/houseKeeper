@@ -54,10 +54,10 @@
     </div>
     {{ form_end(form) }}
     <div class="gray-container">
-        {% for ad in ads %}
-            <div class="wide-container">
-                <div class="block">
-                    <div class="photo-block image-with-overlay-label left-block">
+        <div class="wide-container">
+            {% for ad in ads %}
+                <div class="ad-container flex-container">
+                    <div class="photo-block image-with-overlay-label">
                         {% if ad.top ==1 %}
                             <span class="overlay-label top-label"> В ТОПе </span>                            
                         {% endif %}
@@ -72,7 +72,7 @@
                             <div class="no-phone">Видеть номер телефона могут только зарегистрированные пользователи.</div>
                         {%endif%}
                     </div>
-                    <div class="{{ad.services ? ad.services.idServices ==1 ? 'clear-blue-container' : 'white-container':'white-container'}} info-block short-block right-block">
+                    <div class="{{ad.services ? ad.services.idServices ==1 ? 'clear-blue-container' : 'white-container':'white-container'}} info-block short-block">
                         <div class="ad-head flex-container dark-blue-container">    
                             <div>
                                 <div class="teacher-name"><a href="{{path('user_show', {'id': ad.user.id})}}">{{ ad.user }}</a></div>
@@ -90,18 +90,18 @@
                             <a class="detail-href interactive" href="{{ path('ad_show', { 'idAd': ad.idAd }) }}"> Просмотр </a>
                         </div>
                         <div class="ad-footer">
-                                <div class='info-path'>
-                                    {{ ad.town }}
-                                </div>
-                                <div class=" info-path">
-                                    {{ ad.user.education }}
-                                </div>
-                                <div class='info-path'>
-                                    {{ ad.user.experience }} 
-                                </div>
-                                <div class='info-path' >
-                                    {{ad.place}}
-                                </div>
+                            <div class='info-path'>
+                                {{ ad.town }}
+                            </div>
+                            <div class=" info-path">
+                                {{ ad.user.education }}
+                            </div>
+                            <div class='info-path'>
+                                {{ ad.user.experience }} 
+                            </div>
+                            <div class='info-path' >
+                                {{ad.place}}
+                            </div>
                         </div>
 
                     </div>

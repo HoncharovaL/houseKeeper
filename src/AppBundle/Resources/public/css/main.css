@@ -66,6 +66,7 @@ body{
 .white-container{
     background-color: white;
     padding-bottom: 30px;
+    border: 1px solid transparent;
 }
 .clear-blue-container{
     background-color: #edf7f7;
@@ -78,7 +79,7 @@ body{
     border: 1px solid lightgray;
 }
 
-.colored-container, .orange-header, .popup-header, .login-container{
+.colored-container, .orange-header, .popup-header{
     color: white;
 }
 .dark-blue-container {
@@ -170,10 +171,6 @@ body{
     max-width: 100%;
     height: 327px;
 }
-.user-item{
-    display: flex;
-    justify-content: space-between;
-}
 /*info block settings*/
 .info-block{
     width: 650px;
@@ -181,21 +178,18 @@ body{
 .user-about{
     height: 150px;
 }
-.user-info-block{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
+
 .user-show .user-about{
     height: auto;
     padding:20px 10px;
 }
 /*ads settings*/
+.ad-container{
+    margin-bottom: 15px;
+}
 .ad-head{
     height: 40px;
     padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
 }
 .ad-content, .teacher-content{
     padding: 30px 20px;
@@ -366,6 +360,10 @@ a{
 .interactive:hover{
     opacity: 1;
 }
+.register-href{
+    margin-left: 53px; 
+    font-size: 16px;
+}
 
 /*buttons settings*/
 .text-buttons{
@@ -402,8 +400,6 @@ a{
     background-repeat: no-repeat;
     background-position: 0 0;
     height: 75px;
-    display: flex;
-    justify-content: space-between;
     align-items: center
 }
 .header-container .header-logo{
@@ -685,21 +681,31 @@ a{
     color: #fcab01;
 }
 .login-container{
-    background-image: url(../img/login.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 389px;
-    width: 100%;
+    width: 310px;
+    margin: 0 auto;
+}
+.login-header{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 30px 0;
     text-align: center;
-    padding: 100px 0;
 }
-.login-container label{
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-}
+
 .login-data, .message-data{
     padding: 5px;
+}
+.login-text{
+    padding-top: 10px;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+.login-data.flex-container{
+    justify-content: center;
+    align-items: center;
+}
+.register-href-container{
+    margin: 15px 0; 
+    align-items: center;
 }
