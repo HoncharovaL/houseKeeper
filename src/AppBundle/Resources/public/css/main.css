@@ -86,8 +86,9 @@ body{
     background-color: #4ca5f4;
 }
 .light-blue-container{
-    padding: 70px 20px;
+    
     background-color: #62b5ff;
+    color: white;
 }
 .gray-container{
     padding: 40px 20px;
@@ -175,11 +176,15 @@ body{
 }
 /*info block settings*/
 .info-block{
-    width: 600px;
-    padding: 10px 20px;
+    width: 650px;
 }
 .user-about{
     height: 150px;
+}
+.user-info-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .user-show .user-about{
     height: auto;
@@ -438,7 +443,9 @@ a{
     display: inline-block;
     margin: 0 10px;
 }
-
+.extra-search-container{
+     padding: 70px 20px;
+}
 /*menu settings*/
 .header-container .menu-container{
 

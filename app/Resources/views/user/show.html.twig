@@ -12,31 +12,36 @@
                         <img src="{{ asset('bundles/app/img/no-img.png') }}">
                     {% endif %}
                 </div>
-                <div class="info-block white-container short-block ">
-                    <div class="underlined-block user-name">
-                        <div class="surname">
-                            <span class="opacity-text">Фамилия : </span>
-                            {{ user.surname }}
-                          {#  {%if app.user.id==user.id %}#}
-                                <a class="green-href right-block" href="{{ path('user_edit', { 'id': user.id }) }}">
-                                    <div class="left-block"><img class="button-image" src="{{asset('bundles/app/img/edit.png')}}"></div>
-                                    <div class="left-block">Редактирование</div>
+                <div class="info-block white-container short-block  ">
+                    <div>
+                        <div class='user-name underlined-block user-info-block'>
+                            <div>
+                                <div class="surname"><span class="opacity-text">Фамилия : </span>{{ user.surname }}</div>
+                                <div class="name"><span class="opacity-text">Имя : </span>{{ user.name }}</div>  
+                                <div class="patronymic"><span class="opacity-text">Отчество : </span>{{ user.patronymic }}</div>
+                                <div class="phone"><span class="opacity-text">Телефон :  </span>{{ user.phone }}</div>
+                            </div>
+                            <div>
+                                {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}   #}
+                                {#  {%if app.user.id==user.id %}#}
+                                <a class="detail-href interactive" href="{{ path('user_edit', { 'id': user.id }) }}">
+                                    Редактирование
                                 </a> 
-{#   doesn't work                         {%endif%}#}
+                                {#  {%endif%}#}
+                                {#{% endif %}}#}
+                            </div>
                         </div>
-                        <div class="name"><span class="opacity-text">Имя : </span>{{ user.name }}</div>  
-                        <div class="patronymic"><span class="opacity-text">Отчество : </span>{{ user.patronymic }}</div>
-                        <div class="phone"><span class="opacity-text">Телефон :  </span>{{ user.phone }}</div>
+                        <div class="underlined-block user-education">
+                            <div class="education"><span class="opacity-text">Образование : </span>{{ user.education}}</div>
+                            <div class="experience"><span class="opacity-text">Опыт работы : </span>{{ user.experience }}</div>
+                        </div>
+                        <div class="user-about indent-item">
+                            <div>{{ user.about }}</div>
+                        </div>
                     </div>
-                    <div class="underlined-block user-education">
-                        <div class="education"><span class="opacity-text">Образование : </span>{{ user.education}}</div>
-                        <div class="experience"><span class="opacity-text">Опыт работы : </span>{{ user.experience }}</div>
-                    </div>
-                    <div class="user-about indent-item">
-                        <div>{{ user.about }}</div>
-                    </div>
-                </div>            
-            </div>                
+
+                </div> 
+            </div>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}    
                 {%if app.user.id!=user.id %}
                     <div class="white-container wide-container short-block">
@@ -58,7 +63,7 @@
             {%else%}
                 <div class="attention-header"> ! Только зарегистрированные пользователи могут обмениваться сообщениями! </div>
             {%endif%}
+
         </div>
     </div>
-</div>
 {% endblock %}
