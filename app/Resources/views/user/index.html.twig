@@ -16,7 +16,7 @@
     </div>
     <div class="serrated-gray">
         {% for user in users %}
-            <div class="user-item wide-container">
+            <div class="user-item flex-container wide-container">
                 <div class="block">
                     <div class='photo-block left-block image-with-overlay-label'>
                         <span class="overlay-label">{{ user.rating }}</span>
@@ -30,7 +30,7 @@
                         {%endif%}
                     </div>
                     <div class='info-block white-container short-block right-block '>
-                        <div class='ad-head'>
+                        <div class='ad-head flex-container'>
                             <div class='left-block'>
                                 <div class="teacher-name"><a href="{{path('user_show', {'id': user.id})}}">{{ user }}</a></div>
                             </div>

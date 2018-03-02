@@ -1,8 +1,39 @@
 {% extends "::base.html.twig" %}
-{% block header%}
-{% endblock %}
+
 {% block body %}
-    {{ include('@FOSUser/Security/login_content.html.twig') }}    
+    <div class='white-container'>  
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <div class='text-center login-container'>
+            <div class='login-header'>Вход в личный кабинет</div>
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}            
+                <div class="login-data">
+
+                    <input type="text" id="username" name="_username" placeholder='Логин' value="{{ last_username }}" required="required" />
+                </div>
+                <div class="login-data">
+                    <input type="password" id="password" name="_password" placeholder='Пароль' required="required" />
+                </div>
+                {#<div class="login-data flex-container">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">Запомнить меня</label>
+                </div>#}
+                <div class="login-data">
+                    <input class="dark-blue-submit" type="submit" id="_submit" name="_submit" value="Войти" />
+                </div>
+                
+                <div class="flex-container register-href-container">
+                    <div class='opacity-text'> Еще не с нами?</div>
+                    <a href='{{ path("fos_user_registration_register") }} ' class='blue-href register-href'><div>Зарегистрироваться > </div></a>
+                </div>
+            </form>
+        </div>
+    </div>  
 {% endblock %}
-{% block footer%}
-{% endblock %}
+

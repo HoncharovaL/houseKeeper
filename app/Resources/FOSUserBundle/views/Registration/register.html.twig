@@ -1,8 +1,27 @@
 {% extends "::base.html.twig" %}
-{% block header%}
-{% endblock %}
+
 {% block body %}
-{% include "@FOSUser/Registration/register_content.html.twig" %}
-{% endblock %}
-{% block footer%}
+    <div class="white-container">  
+        <div class='login-container'>
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            <div class='login-header'>Регистрация на сайте</div>
+            <div  class="login-data">
+                {{ form_widget(form.email, { 'attr' : {'placeholder': 'Email'}}) }}
+            </div>
+            <div  class="login-data">
+                {{ form_widget(form.username, { 'attr' : {'placeholder': 'Логин'}}) }}
+            </div>
+            <div  class="login-data">
+                {{ form_widget(form.plainPassword.first, { 'attr' : {'placeholder': 'Пароль'}}) }}
+            </div>
+            <div  class="login-data">
+                {{ form_widget(form.plainPassword.second, { 'attr' : {'placeholder': 'Повторите пароль'}}) }}
+            </div>
+            <div class='login-data'>
+                <input class="dark-blue-submit" type="submit" value="Зарегистрироваться" />
+            </div>
+            <div class='opacity-text login-text'> Нажимая кнопку "Зарегистрироваться", вы принимаете правила сайта и политику конфиденциальности.</div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

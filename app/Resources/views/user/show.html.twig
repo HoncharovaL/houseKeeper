@@ -3,7 +3,7 @@
 {% block body %}
     <div class="wide-container">
         <div class=" user-show">
-            <div class="user-item">
+            <div class="user-item flex-container">
                 <div class="photo-block image-with-overlay-label">
                     <span class="overlay-label">{{ user.rating }}</span>
                     {% if user.photo %}
@@ -14,7 +14,7 @@
                 </div>
                 <div class="info-block white-container short-block  ">
                     <div>
-                        <div class='user-name underlined-block user-info-block'>
+                        <div class='user-name underlined-block flex-container'>
                             <div>
                                 <div class="surname"><span class="opacity-text">Фамилия : </span>{{ user.surname }}</div>
                                 <div class="name"><span class="opacity-text">Имя : </span>{{ user.name }}</div>  
