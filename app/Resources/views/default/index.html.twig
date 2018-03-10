@@ -13,7 +13,7 @@
     <div class=" dark-blue-container search-container text-center">    
         <div class="search-form">
 
-            <div class="search-area search-area-big">
+            <div class="search-area">
                 {{ form_widget(form.search, {'attr':{'placeholder':"Специализация"}})}}
                 {#ex - subject#}
             </div>
@@ -22,10 +22,10 @@
             </div>
             <div class="search-area">
                 <input class="light-blue-submit" type="submit" value="Найти помощника" />
-                <div class=" extra-search-button">
-                    <a class="underlined-href interactive" onclick="$('.extra-search-container').toggleClass('hidden')">расширенный поиск</a> 
-                </div>
             </div>
+        </div>
+        <div class="extra-search-button">
+            <a class="underlined-href interactive" onclick="$('.extra-search-container').toggleClass('hidden')">расширенный поиск</a> 
         </div>
     </div>
     <div class="extra-search-container hidden light-blue-container">

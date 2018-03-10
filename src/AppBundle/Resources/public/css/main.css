@@ -14,6 +14,12 @@ body{
 .text-center{
     text-align: center;
 }
+.text-right{
+    text-align: right;
+}
+.text-left{
+    text-align: left;
+}
 .opacity-text{
     opacity: 0.5;
 }
@@ -33,6 +39,11 @@ body{
 /*blocks and containers types*/
 .hidden{
     display: none;
+}
+.colored-header{
+    font-size: 16px;
+    padding: 25px 0;
+    text-align: center;
 }
 .center-block{
     margin: 10px auto;
@@ -59,8 +70,10 @@ body{
     padding-bottom: 0 !important;
 }
 .underlined-block{
-    padding: 10px;
     border-bottom: 1px #f2f2f2 solid;
+    padding: 10px;
+}
+.underlined-block:not(:last-child){
     margin-bottom: 10px; 
 }
 .white-container{
@@ -87,7 +100,7 @@ body{
     background-color: #4ca5f4;
 }
 .light-blue-container{
-    
+
     background-color: #62b5ff;
     color: white;
 }
@@ -436,17 +449,34 @@ a{
     font-size: 20px;
 }
 .extra-search-button{
-    display: inline-block;
-    margin: 0 10px;
+    margin-top: 30px;
 }
 .extra-search-container{
-     padding: 70px 20px;
+    padding: 70px 20px;
 }
 /*menu settings*/
 .header-container .menu-container{
-
-    height: 45px;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.user-menu{
+    width: 150px;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.user-menu-photo{
+    width: 40px;
+    height: 40px;
+    margin: 5px 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 0;
+}
+.user-menu-name{
+    color: white;
+    padding: 5px 0;
 }
 .menu-container .menu-item{
     display: inline-block;
@@ -456,34 +486,41 @@ a{
     border-radius: 3px;
     margin-right: 5px;
 }
-.menu-href{
-
-}
 .menu-item:hover{
     border:1px solid #90cbff;
 }
 .dropdown-content {
-    background-color:black;
+    background-color:white;
     display: none;
     position: absolute;
-    margin-top:5px;
-    margin-left: -1px;
     z-index: 1;
+    left: -1px;
 }
 .dropdownbtn{
-    width: 150px;
+    border-bottom: 1px transparent solid;
+    position: relative;
+}
+.dropdownbtn:hover {
+    background-color: white;
+}
+.dropdownbtn:hover .user-menu-name{
+    color: grey;
+}
+.dropdownbtn:hover .user-btn{
+    border-bottom: 1px #f2f2f2 solid;
 }
 .dropdownbtn:hover .dropdown-content{
     display: block;
 }
-.dropdown-content .dropdown-item{
-    padding: 5px 0;
+.dropdown-item .detail-href{
+    display: block;
+    padding: 10px 0;
     border: 1px #f2f2f2 solid;
     width: 150px;
     display: block;
 }
 .dropdown-content .dropdown-item:hover{
-    border:1px #facb01 solid;
+    border-bottom-color: grey;
 }
 /*footer settings*/
 .footer{
@@ -571,16 +608,24 @@ a{
     margin: 20px 0;
 }
 /*messages and reviews*/
-.reviews-header{
-    font-size: 16px;
-    padding: 25px 0;
-} 
+.dialog-item{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.dialog-item  .messages-photo img{
+    width: 50px;
+    height: 50px;
+}
+.dialog-user-name{
+    margin: 10px 0;
+}
 .messages-photo img{
     width: 150px;
     height: 150px;
     object-fit: contain;
     margin: 0 40px;
-    
+    border-radius: 50%;
 }
 .message-field{
     margin-top: 20px;
@@ -607,8 +652,9 @@ a{
     display: inline-block;
 }
 .attention-header{
+    width: 100%;
     text-align: center;
-    color: #fcab01;
+    color: #247298;
     font-size: 12px;
     margin: 20px 0;
 }
@@ -620,11 +666,12 @@ a{
 .messages-item{
     display: flex;
 }
-.right-message .message-block{
-    float: right;
+.right-message {
+
+    flex-direction: row-reverse;
 }
-.left-message .message-block{
-    float: left;
+.left-message {
+    flex-direction: row;
 }
 .right-message .main-info{
     text-align: right;

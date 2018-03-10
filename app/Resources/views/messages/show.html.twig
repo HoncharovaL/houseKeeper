@@ -4,26 +4,24 @@
     <div class="correspondence-container">
         <div class="white-container wide-container short-block">
             {% for message in messages %}
-                <div class="messages-item block underlined-block">                   
-                    <div class="{{message.sender.id==app.user.id ? 'right-message' : 'left-message'}}">
+                <div class="messages-item underlined-block {{message.sender.id==app.user.id ? 'right-message' : 'left-message'}}">                   
 
-                        <div class="messages-photo message-block ">
-                            {% if message.sender.photo %}
-                                <img src="{{photo_path}}{{message.sender.photo}}">
-                            {% else %}
-                                <img src="{{ asset('bundles/app/img/no-img.png') }}">
-                            {% endif %}
-                        </div>
-                        <div class="message-block" >
-                            <div class="message-data message-sender main-info detail-href">
-                                <a class="black-href opacity-text" href="{{path('user_show', {'id': message.sender.id})}}">{{ message.sender }}</a>
-                            </div>  
-                            <div class="message-data message-content bordered-div">
-                                {{ message.message }}
-                            </div>  
-                            <div class="opacity-text message-data main-info">
-                                {{ message.dateMes|date('Y-m-d') }}
-                            </div>
+                    <div class="messages-photo message-block ">
+                        {% if message.sender.photo %}
+                            <img src="{{photo_path}}{{message.sender.photo}}">
+                        {% else %}
+                            <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                        {% endif %}
+                    </div>
+                    <div class="message-block" >
+                        <div class="message-data message-sender main-info detail-href">
+                            <a class="black-href opacity-text" href="{{path('user_show', {'id': message.sender.id})}}">{{ message.sender }}</a>
+                        </div>  
+                        <div class="message-data message-content bordered-div">
+                            {{ message.message }}
+                        </div>  
+                        <div class="opacity-text message-data main-info">
+                            {{ message.dateMes|date('Y-m-d') }}
                         </div>
                     </div>
 
@@ -31,17 +29,12 @@
             {% endfor %}
         </div>
         <div class="white-container wide-container short-block">
-            <div class="orange-header text-center">Отправить сообщение пользователю:</div>
+            <div class="colored-header dark-blue-container">Отправить сообщение пользователю:</div>
             {{ form_start(edit_form)}}
-            <div class='messages-item underlined-block'>                        
-                <div class="form-horizontal">
-                    
-                    <div class="message-field full-size-field">{{ form_widget(edit_form.message)}}</div>
-                </div>
-                <div class="buttons-container">
-                    <div class="text-center">
-                        <input class="green-submit" type="submit" value="Отправить" />
-                    </div>
+            <div class='underlined-block form-horizontal'>                        
+                <div class="message-field full-size-field form-block ">{{ form_widget(edit_form.message)}}</div>
+                <div class='form-block text-right'>
+                    <input class="light-blue-submit" type="submit" value="Отправить" />
                 </div>
             </div>
             {{ form_end(edit_form) }}

@@ -87,6 +87,9 @@ textarea {
 .popup-content{
     text-align: center;
 }
+.form-horizontal{
+    width: 100%;
+}
 
 .form-horizontal label {
     display: inline-block;
@@ -94,6 +97,7 @@ textarea {
 }
 
 .form-horizontal .form-block {
+    display: block;
     width: 90%;
     margin: 0 auto;
 }

@@ -22,13 +22,13 @@
                                 <div class="phone"><span class="opacity-text">Телефон :  </span>{{ user.phone }}</div>
                             </div>
                             <div>
-                                {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}   #}
-                                {#  {%if app.user.id==user.id %}#}
-                                <a class="detail-href interactive" href="{{ path('user_edit', { 'id': user.id }) }}">
-                                    Редактирование
-                                </a> 
-                                {#  {%endif%}#}
-                                {#{% endif %}}#}
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}   
+                                    {%if app.user.id==user.id %}
+                                        <a class="detail-href interactive" href="{{ path('user_edit', { 'id': user.id }) }}">
+                                            Редактирование
+                                        </a> 
+                                    {%endif%}
+                                {% endif %}
                             </div>
                         </div>
                         <div class="underlined-block user-education">
