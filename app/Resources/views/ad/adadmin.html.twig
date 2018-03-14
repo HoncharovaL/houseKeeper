@@ -4,64 +4,76 @@
     <div>
         {% if ads | length %}
             {% for ad in ads %}
-                <div class="wide-container ad-admin-container">
-                    <div class=" block">
-                        <div class="photo-block image-with-overlay-label left-block">
-                            {% if ad.user.photo %}
-                                <img src="{{photo_path}}{{ad.user.photo}}">
-                            {% else %}
-                                <img src="{{ asset('bundles/app/img/no-img.png') }}">
-                            {% endif %}
+                <div class="wide-container ad-admin-container flex-container">
+                    <div class="photo-block image-with-overlay-label">
+                        {% if ad.user.photo %}
+                            <img src="{{photo_path}}{{ad.user.photo}}">
+                        {% else %}
+                            <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                        {% endif %}
 
+                    </div>
+                    <div class="info-block white-container short-block">
+                        <div class="ad-head flex-container dark-blue-container">    
+                            <div class='left-block'>
+                                <div class="teacher-name">{{ ad.user }}</div>
+                                <div class="ad-subject">{{ ad.subject}}</div>
+                            </div>
+                            <div class='right-block'>
+                                <div class="teacher-rating">{{ ad.user.rating}}</div>
+                            </div>
                         </div>
-                        <div class="info-block white-container short-block right-block">
-                            <div class="ad-head flex-container">    
-                                <div class='left-block'>
-                                    <div class="teacher-name">{{ ad.user }}</div>
-                                    <div class="ad-subject">{{ ad.subject}}</div>
-                                </div>
-                                <div class='right-block'>
-                                    <div class="teacher-rating">{{ ad.user.rating}}</div>
-                                </div>
+                        <div class="ad-content">
+                            <div class="flex-container text-buttons">
+                                <a class="detail-href interactive" href="{{ path('ad_show', { 'idAd': ad.idAd }) }}">
+                                    Просмотр 
+                                </a> 
+                                <a class="detail-href interactive" href="{{ path('ad_edit', { 'idAd': ad.idAd }) }}">
+                                    Редактирование
+                                </a> 
                             </div>
-                            <div class=" ad-content">
-                                <div class='date block'>
-                                    <div class="opacity-text left-block">{{ ad.adate|date('Y-m-d') }}</div>
-                                    <a class="blue-href right-block" href="{{ path('ad_showadmin', { 'idAd': ad.idAd }) }}">
-                                        <div class="left-block"><img class="button-image" src="{{asset('bundles/app/img/view.png')}}"></div>
-                                        <div class="left-block">Просмотр</div>
-                                    </a> 
-                                </div>
 
-                                <div class='ad-description'>{{ad.adText|length <= 300 ? ad.adText : ad.adText|slice(0, 300)~'...'}}</div>
-                            </div>
-                            <div class="ad-footer block">
-                                <div class="ad-place cell">
-                                    <div class='ad-town'>{{ ad.town }}</div>
-                                    <div class='ad-area'>{{ ad.area }}</div>
-                                </div>     
-                                <div class="ad-type cell">
-                                    {{ad.place}}
-                                </div>
-                                <div class="ad-online cell">
-                                    Уроки online
-                                    {% if ad.online==1%}
-                                        <img class="yes-no-image" src="{{ asset('bundles/app/img/yes.png') }}">
+                            <div class='ad-description'>{{ ad.adText|length <= 300 ? ad.adText : ad.adText|slice(0, 300)~'...' }}</div>
+                            <div class="ad-date-status flex-container">
+                                <div class='opacity-text'>{{ ad.adate|date('Y-m-d') }}</div>
+                                <div class='opacity-text'>
+                                    {%if ad.state==0%}
+                                        <div> В работе</div>
+                                    {%elseif ad.state==1%}
+                                        <div> Ожидает публикации</div>
                                     {%else%}
-                                        <img class="yes-no-image" src="{{ asset('bundles/app/img/no.png') }}">
+                                        <div> Опубликовано</div>
                                     {%endif%}
                                 </div>
-                                <div class="ad-price cell">
-                                    {{ ad.price }}{{ ad.currency }}/{{ ad.durability }}{{ ad.value }}
-                                </div>
                             </div>
-                            <div class="ad-footer block"> 
-                                <div class="cell ad-service">
+                            <div class='flex-container text-buttons'>
+                                <div class='opacity-text'>
                                     Тип размещения: {{ ad.services }}
                                 </div>
-                                <div class="cell ad-servdate">
+                                <div class='opacity-text'>
                                     Действителен до: {% if ad.dateServ %}{{ ad.dateServ|date('Y-m-d') }}{% endif %}
                                 </div>
+                            </div>
+
+                        </div>
+
+                        <div class="ad-footer">
+
+                            <div class='info-path'>
+                                {{ ad.town }}
+                            </div>
+                            <div class=" info-path">
+                                {{ ad.user.education }}
+                            </div>
+                            <div class='info-path'>
+                                {{ ad.user.experience }} 
+                            </div>
+                            <div class='info-path' >
+                                {{ad.place}}
+                            </div>
+
+                            <div class="info-path ">
+                                {{ ad.price }}{{ ad.currency }}/{{ ad.durability }}{{ ad.value }}
                             </div>
                         </div>
                     </div>
