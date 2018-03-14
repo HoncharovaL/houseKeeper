@@ -2,23 +2,28 @@
 
 {% block body %}
     <div class="header-bottom colored-container">
-        <div class="howsmart-head">
-            <div>HOWSMART.UA</div>
-            <div>Лучшие репетиторы Украины</div>                
+        <div class="howsmart-head promo-container">
+            Если требуется срочно подобрать няню или надежных домашних работников - обращайтесь к нам.         
         </div>
+        <div class="howsmart-about promo-container">
+            Подбор домашнего персонала для работы в семьях, воспитания детей, уборки квартир, для ухода за пожилыми и больными людьми и для работы в загородных домах.
+        </div>
+
+    </div>
+    <div class='dark-blue-container text-center user-search-container'>
         {{ form_start(form)}}
-        <div class=" howsmart-about search-container"> 
-            <div>Поиск репетитора</div>
+
+        <div class='colored-header'>Поиск работников</div>
+        <div class='user-search-form'>
             {{ form_widget(form.search, {'attr':{'placeholder':"Имя"}})}}     
-            <input class="green-submit" type="submit" value="Поиск" />            
+            <input class="light-blue-submit" type="submit" value="Найти" />            
         </div>
         {{ form_end(form)}}
     </div>
     <div class="serrated-gray">
         {% for user in users %}
             <div class="user-item flex-container wide-container">
-                <div class="block">
-                    <div class='photo-block left-block image-with-overlay-label'>
+                    <div class='photo-block image-with-overlay-label'>
                         <span class="overlay-label">{{ user.rating }}</span>
                         {% if user.photo %}
                             <img src="{{photo_path}}{{user.photo}}">
@@ -29,32 +34,29 @@
                             <div class='teacher-phone'>{{ user.phone }}</div>
                         {%endif%}
                     </div>
-                    <div class='info-block white-container short-block right-block '>
-                        <div class='ad-head flex-container'>
-                            <div class='left-block'>
+                    <div class='info-block white-container short-block '>
+                        <div class='ad-head flex-container dark-blue-container'>
                                 <div class="teacher-name"><a href="{{path('user_show', {'id': user.id})}}">{{ user }}</a></div>
-                            </div>
 
                         </div>
                         <div >
                             <div class='teacher-content'>
                                 {{ user.about|length <= 300 ? user.about : user.about|slice(0, 300)~'...'  }}
                             </div>
-                            <div class='teacher-footer block'>
-                                <div class='teacher-education cell'>
+                            <div class='teacher-footer'>
+                                <div class='info-path'>
                                     {{ user.education }}
                                 </div>
-                                <div class='teacher-university cell'>
+                                <div class='info-path'>
                                     {{ user.university }}
                                 </div>
-                                <div class='teacher-experience cell'>
+                                <div class='info-path'>
                                     {{ user.experience }}
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                </div>
             </div>
         {%endfor%}
     </div>

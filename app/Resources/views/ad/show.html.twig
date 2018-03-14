@@ -108,20 +108,20 @@
                     </div>
                     {{ form_end(form) }}
                 {% elseif confirm==2 %}
-                    <div class="messages-item underlined-block form-horizontal">
+                    <div class="underlined-block form-horizontal">
                         <div class="attention-header">
                             ! Чтобы получить возможность оценки преподавателя необходимо получить подтверждение о том, что Вы являетесь его учеником !
                         </div>
-                        {{ form_start(query_form)}}
-                        <div class="full-size-field">
-                            {{ form_widget(query_form.queryText)}}
-                        </div>
-                        <div class="buttons-container">
-                            <div class="right-block">
-                                <input class="green-submit" type="submit" value="Отправить" />
+                        <div>
+                            {{ form_start(query_form)}}
+                            <div class="message-field full-size-field form-block">
+                                {{ form_widget(query_form.queryText)}}
                             </div>
+                            <div class="form-block text-right">
+                                <input class="light-blue-submit" type="submit" value="Отправить" />
+                            </div>
+                            {{ form_end(query_form) }}
                         </div>
-                        {{ form_end(query_form) }}
                     </div>
                 {% elseif confirm==0 %}
                     <div class="messages-item underlined-block">

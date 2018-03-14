@@ -73,7 +73,7 @@ body{
     border-bottom: 1px #f2f2f2 solid;
     padding: 10px;
 }
-.underlined-block:not(:last-child){
+.underlined-block:not(:nth-last-child){
     margin-bottom: 10px; 
 }
 .white-container{
@@ -108,8 +108,6 @@ body{
     padding: 40px 20px;
 }
 .block:after,
-.ad-row:after,
-.text-buttons:after,
 .buttons-container:after{
     content: '.';
     float: none;
@@ -180,10 +178,6 @@ body{
     line-height: 25px;
     background-color: #2194d8;
 }
-.user-item .photo-block img{
-    max-width: 100%;
-    height: 327px;
-}
 /*info block settings*/
 .info-block{
     width: 650px;
@@ -205,11 +199,11 @@ body{
     padding: 15px 20px;
 }
 .ad-content, .teacher-content{
-    padding: 30px 20px;
-    height: 124px;
+    padding: 15px 20px;
+    min-height: 151px;
 }
-.ads-container .ad-content{
-    height: 85px;
+.ad-date-status{
+    margin: 15px 0;
 }
 .ad-full-container .teacher-content, .ad-full-container .ad-content{
     height: auto !important;
@@ -220,21 +214,22 @@ body{
 .ad-row{
     width: 90%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .ad-price{
     font-size: 18px;
     font-weight: bold;
 }
 
-.ad-row .left-block{
-    height: 53px;
-    line-height: 53px;
-}
+
 .ad-edit-content{
     margin: 20px 0;
 }
 .ad-description{
     margin: 10px 0;
+    min-height: 50px;
 }
 
 .ad-footer, .teacher-footer{
@@ -380,13 +375,7 @@ a{
 
 /*buttons settings*/
 .text-buttons{
-    padding: 20px 10px;
-}
-.text-buttons .left{
-    float: left;
-}
-.text-buttons .right{
-    float: right;
+    margin: 15px 0;
 }
 .buttons-container{
     display: block;
@@ -439,6 +428,17 @@ a{
     text-align: center;
     width: 820px;
     margin: 0 auto;
+}
+.user-search-container{
+    margin-top: -75px;
+}
+.user-search-form{
+    height: 100px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
 }
 .header-bottom .howsmart-head{
     padding-top: 75px;
@@ -494,7 +494,6 @@ a{
     display: none;
     position: absolute;
     z-index: 1;
-    left: -1px;
 }
 .dropdownbtn{
     border-bottom: 1px transparent solid;
@@ -518,6 +517,7 @@ a{
     border: 1px #f2f2f2 solid;
     width: 150px;
     display: block;
+    box-sizing: border-box;
 }
 .dropdown-content .dropdown-item:hover{
     border-bottom-color: grey;
@@ -747,6 +747,10 @@ a{
 .flex-container{
     display: flex;
     justify-content: space-between;
+}
+.flex-end-container{
+    display: flex;
+    flex-direction: row-reverse;
 }
 .login-data.flex-container{
     justify-content: center;

@@ -88,9 +88,8 @@ textarea {
     text-align: center;
 }
 .form-horizontal{
-    width: 100%;
+    min-width: 90%;
 }
-
 .form-horizontal label {
     display: inline-block;
     width: 40%;
@@ -110,7 +109,13 @@ textarea {
 .form-horizontal .full-size-field input[type="text"], .form-horizontal .full-size-field textarea, .form-horizontal .full-size-field select,  .form-horizontal .full-size-field input[type="password"],.form-horizontal .full-size-field input[type="number"]{
     width: 100%;
 }
-
+.full-size-field{
+    width: 100%;
+    margin: auto;
+}
+.message-field .full-size-field{
+    width: 500px;
+}
 .vich-image img {
     max-height: 350px;
     max-width: 100%;
@@ -161,7 +166,7 @@ input{
     padding: 10px 15px;
     width: 300px;
     box-sizing: border-box;
-    
+
 }
 .login-container .dark-blue-submit {
     width: 300px;
