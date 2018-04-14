@@ -124,26 +124,15 @@ textarea {
 .fileContainer {
     position: relative;
     font-size: 14px;
-    color: #7b8e1f;
+    color: #67b5d9;
     border: none;
     float: right;
     text-decoration: none;
     cursor: pointer;
 }
-.fileContainer:before{
-    display: inline-block;
-    content: '.';
-    color: #000\9;
-    width: 10px;
-    height: 15px;
-    background-image:  url(../img/sent.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
 .fileContainer:hover {
-    color: #415403;
+    color: #247298;
 }
 
 .fileContainer [type=file] {
