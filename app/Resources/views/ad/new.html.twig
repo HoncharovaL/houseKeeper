@@ -7,66 +7,66 @@
             Создание
         </div>
         <div class="ad-edit-content">
-            <div class="ad-row">
-                <div class="left-block">
+            <div class="ad-row flex-container">
+                <div>
                     Специализация
                 </div>
-                <div class="right-block">
+                <div>
                     {{ form_widget(form.subject) }}
                 </div>
             </div>
-            <div class="ad-row form-horizontal underlined-block">                
+            <div class="ad-row flex-container form-horizontal underlined-block">                
                 <div class="full-size-field">
                     {{ form_widget(form.adText) }}
                 </div>
             </div>
 
-            <div class="ad-row">
-                <div class="left-block">
+            <div class="ad-row flex-container">
+                <div>
                     Область
                 </div>
-                <div class="right-block">
+                <div>
                     {{ form_widget(form.region) }}
                 </div>
             </div>
-            <div class="ad-row">
-                <div class="left-block">
+            <div class="ad-row flex-container">
+                <div>
                     Город
                 </div>
-                <div class="right-block">
+                <div>
                     {{ form_widget(form.town) }}
                 </div>
             </div>
-            <div class="ad-row">
-                <div class="left-block">
+            <div class="ad-row flex-container">
+                <div>
                     Условия работы
                 </div>
-                <div class="right-block">
+                <div>
                     {{ form_widget(form.place) }}
                 </div>
             </div>
-            <div class="ad-row">
-                <div class="left-block">
+            <div class="ad-row flex-container">
+                <div>
                     Цена
                 </div>
-                <div class="right-block edit-price">
+                <div class="edit-price">
                     {{ form_widget(form.price) }}{{ form_widget(form.currency) }}
                 </div>
             </div>
-            <div class="ad-row underlined-block">
-                <div class="left-block">
+            <div class="ad-row flex-container underlined-block">
+                <div>
                     Время
                 </div>
-                <div class="right-block edit-durability">
+                <div class="edit-durability">
                     {{ form_widget(form.durability) }}{{ form_widget(form.value) }}
                 </div>
             </div>
 
-            <div class="ad-row underlined-block">
-                <div class="left-block">
+            <div class="ad-row flex-container underlined-block">
+                <div>
                     Тип размещения
                 </div>
-                <div class="right-block">
+                <div>
                     {{ form_widget(form.services) }}
                 </div>
             </div>

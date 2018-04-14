@@ -2,16 +2,17 @@
 
 {% block body %}
     <div class="wide-container">
-        <div class="block">
-            {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
-            <div class="photo-block left-block">
+        {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+        <div class="flex-container">
+
+            <div class="photo-block">
                 {% if user.photo %}
                 {% else %}
-                    <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                    <img class="no-avatar" src="{{ asset('bundles/app/img/avatar.png') }}">
                 {% endif %}
                 {{ form_widget(edit_form.photoFile)}}
             </div>
-            <div class="info-block white-container right-block">
+            <div class="info-block white-container">
                 <div class="underlined-block form-block">
                     <div class="surname">{{ form_row(edit_form.surname)}}</div>
                     <div class="name">{{ form_row(edit_form.name)}}</div>  
@@ -32,7 +33,8 @@
                     </button> 
                 </div>
             </div>
-            {{ form_end(edit_form) }}
+
         </div>
+        {{ form_end(edit_form) }}
     </div>
 {% endblock %}

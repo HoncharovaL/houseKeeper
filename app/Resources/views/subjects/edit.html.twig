@@ -1,22 +1,20 @@
 <div class="popup subject-edit">
-    <div class="orange-header text-center">
+    <div class="colored-header dark-blue-container text-center">
         <div class="text">Редактировать</div>
     </div>
     <div class="popup-content text-center">
         {{ form_start(edit_form, {'action':path('subjects_edit',{'idSubject':app.request.get('idSubject')})}) }}
         {{ form_widget(edit_form) }}
         <div class="text-buttons right-block">
-            <button type="submit" class="green-href" >
-                <div class="left-block"><img class="button-image" src="{{asset('bundles/app/img/save-green.png')}}"/></div>
-                <div class="left-block big-text">Сохранить</div>
+            <button type="submit" class="blue-href" >
+                <div class="big-text">Сохранить</div>
             </button> 
         </div>
         {{ form_end(edit_form) }}
         {{ form_start(delete_form) }}
         <div class="text-buttons left-block">
             <button type="submit" class="red-href" >
-                <div class="left-block"><img class="button-image" src="{{asset('bundles/app/img/delete.png')}}"/></div>
-                <div class="left-block big-text">Удалить</div>
+                <div class="big-text">Удалить</div>
             </button>
             {{ form_end(delete_form) }}
         </div>

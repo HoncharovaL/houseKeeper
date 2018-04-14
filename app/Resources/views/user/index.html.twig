@@ -2,10 +2,10 @@
 
 {% block body %}
     <div class="header-bottom colored-container">
-        <div class="howsmart-head promo-container">
+        <div class="hk-head promo-container">
             Если требуется срочно подобрать няню или надежных домашних работников - обращайтесь к нам.         
         </div>
-        <div class="howsmart-about promo-container">
+        <div class="hk-about promo-container">
             Подбор домашнего персонала для работы в семьях, воспитания детей, уборки квартир, для ухода за пожилыми и больными людьми и для работы в загородных домах.
         </div>
 
@@ -28,22 +28,22 @@
                         {% if user.photo %}
                             <img src="{{photo_path}}{{user.photo}}">
                         {% else %}
-                            <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                            <img class='no-avatar' src="{{ asset('bundles/app/img/avatar.png') }}">
                         {% endif %}
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <div class='teacher-phone'>{{ user.phone }}</div>
+                            <div class='employee-phone'>{{ user.phone }}</div>
                         {%endif%}
                     </div>
                     <div class='info-block white-container short-block '>
                         <div class='ad-head flex-container dark-blue-container'>
-                                <div class="teacher-name"><a href="{{path('user_show', {'id': user.id})}}">{{ user }}</a></div>
+                                <div class="employee-name"><a href="{{path('user_show', {'id': user.id})}}">{{ user }}</a></div>
 
                         </div>
                         <div >
-                            <div class='teacher-content'>
+                            <div class='employee-content'>
                                 {{ user.about|length <= 300 ? user.about : user.about|slice(0, 300)~'...'  }}
                             </div>
-                            <div class='teacher-footer'>
+                            <div class='employee-footer'>
                                 <div class='info-path'>
                                     {{ user.education }}
                                 </div>

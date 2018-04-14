@@ -2,10 +2,10 @@
 
 {% block body %}
     <div class="header-bottom colored-container">
-        <div class="howsmart-head promo-container">
+        <div class="hk-head promo-container">
             <div>Разместите своё объявление</div>             
         </div>
-        <div class="howsmart-about promo-container">
+        <div class="hk-about promo-container">
             <div>и найдите отличную работу.</div>
             {% if is_granted('IS_AUTHENTICATED_FULLY')%}
                 <div class='buttons-container'>
@@ -24,17 +24,17 @@
                         {% if ad.user.photo %}
                             <img src="{{photo_path}}{{ad.user.photo}}">
                         {% else %}
-                            <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                            <img class='no-avatar'  src="{{ asset('bundles/app/img/avatar.png') }}">
                         {% endif %}
                     </div>
                     <div class="info-block white-container short-block">
                         <div class="ad-head flex-container dark-blue-container">    
-                            <div class='left-block'>
-                                <div class="teacher-name">{{ ad.user }}</div>
+                            <div>
+                                <div class="employee-name">{{ ad.user }}</div>
                                 <div class="ad-subject">{{ ad.subject}}</div>
                             </div>
-                            <div class='right-block'>
-                                <div class="teacher-rating">{{ ad.user.rating}}</div>
+                            <div>
+                                <div class="employee-rating">{{ ad.user.rating}}</div>
                             </div>
                         </div>
                         <div class="ad-content">

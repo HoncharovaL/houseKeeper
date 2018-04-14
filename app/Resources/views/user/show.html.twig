@@ -9,7 +9,7 @@
                     {% if user.photo %}
                         <img src="{{photo_path}}{{user.photo}}">
                     {% else %}
-                        <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                        <img class='no-avatar' src="{{ asset('bundles/app/img/avatar.png') }}">
                     {% endif %}
                 </div>
                 <div class="info-block white-container short-block ">

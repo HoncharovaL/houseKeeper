@@ -19,7 +19,7 @@
                             {% if message.photo %}
                                 <img src="{{photo_path}}{{message.photo}}">
                             {% else %}
-                                <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                                <img class='no-avatar' src="{{ asset('bundles/app/img/avatar.png') }}">
                             {% endif %}
                         </div>
 

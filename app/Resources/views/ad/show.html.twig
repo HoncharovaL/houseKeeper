@@ -1,34 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class='ad-full-container wide-container'>
-        <div class="block">
-            <div class='photo-block left-block image-with-overlay-label'>
+    <div class='ad-full-container wide-container flex-container'>
+
+            <div class='photo-block image-with-overlay-label'>
                 <span class="overlay-label">{{ ad.user.rating }}</span>
                 {% if ad.user.photo %}
                     <img src="{{photo_path}}{{ad.user.photo}}">
                 {% else %}
-                    <img src="{{ asset('bundles/app/img/no-img.png') }}">
+                    <img class='no-avatar'  src="{{ asset('bundles/app/img/avatar.png') }}">
                 {% endif %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <div class='teacher-phone'>{{ ad.user.phone }}</div>
+                    <div class='employee-phone'>{{ ad.user.phone }}</div>
                 {%else%}
                     <div class="no-phone">Видеть номер телефона могут только зарегистрированные пользователи.</div>
                 {%endif%}
             </div>
-            <div class='info-block white-container  short-block right-block'>
+            <div class='info-block white-container  short-block'>
                 <div class='ad-head flex-container dark-blue-container'>
                     <div >
-                        <div class="teacher-name"><a href="{{path('user_show', {'id': ad.user.id})}}">{{ ad.user }}</a></div>
+                        <div class="employee-name"><a href="{{path('user_show', {'id': ad.user.id})}}">{{ ad.user }}</a></div>
                         <div class="ad-subject">{{ ad.subject}}</div>
                     </div>
                     <div >
-                        <div class='teacher-experience cell'> {{ ad.user.experience }} </div>
+                        <div class='employee-experience cell'> {{ ad.user.experience }} </div>
                         <div class='ad-date'>{% if ad.adate %}{{ ad.adate|date('d-m-Y') }}{% endif %}</div>
                     </div>
                 </div>
                 <div>
-                    <div class='teacher-content bordered-bottom'>
+                    <div class='employee-content bordered-bottom'>
                         {{ ad.user.about }}
                     </div>
 
@@ -53,7 +53,7 @@
                 </div>
 
             </div>
-        </div>
+
     </div>
 
     <div class='review-container'>
@@ -68,7 +68,7 @@
                             {% if comments.user.photo %}
                                 <img src="{{photo_path}}{{comments.user.photo}}" >
                             {%else%}
-                                <img src="{{ asset('bundles/app/img/no-img.png') }}" >
+                                <img class='no-avatar'  src="{{ asset('bundles/app/img/avatar.png') }}" >
                             {%endif%}
                         </div>
                         <div class="messages-content">

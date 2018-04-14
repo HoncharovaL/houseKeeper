@@ -73,7 +73,7 @@ body{
     border-bottom: 1px #f2f2f2 solid;
     padding: 10px;
 }
-.underlined-block:not(:nth-last-child){
+.underlined-block:not(:last-child){
     margin-bottom: 10px; 
 }
 .white-container{
@@ -82,7 +82,7 @@ body{
     border: 1px solid transparent;
 }
 .clear-blue-container{
-    background-color: #edf7f7;
+    background-color: #F6FBFF;
 }
 .clear-blue-container .ad-content{
     border-right: 1px solid lightgray;
@@ -92,20 +92,14 @@ body{
     border: 1px solid lightgray;
 }
 
-.colored-container, .orange-header, .popup-header{
+.colored-container, .popup-header, .dark-blue-container, .light-blue-container{
     color: white;
 }
 .dark-blue-container {
-    color:  white;
     background-color: #4ca5f4;
 }
 .light-blue-container{
-
     background-color: #62b5ff;
-    color: white;
-}
-.gray-container{
-    padding: 40px 20px;
 }
 .block:after,
 .buttons-container:after{
@@ -137,7 +131,7 @@ body{
     background-color: #2194d8 !important;
 }
 .image-with-overlay-label .overlay-label {
-    background-color: #2194d8;
+    background-color: #4ca5f4;
     display: inline-block;
     width: 50px;
     height: 30px;
@@ -154,13 +148,19 @@ body{
 /*photo block settings*/
 .photo-block{
     text-align: center;
+    height: 250px;
+    width: 325px;
 }
 .photo-block img{
     height: 250px;
     width: 325px;
     object-fit: cover;
 }
-.teacher-phone{
+img.no-avatar{
+    object-fit: contain;
+    background-color: rgba(255,255,255,0.3);
+}
+.employee-phone{
     width: 325px;
     height:50px;
     text-align: center;
@@ -168,7 +168,7 @@ body{
     color:white;
     font-size: 16px;
     font-weight: bold; 
-    background-color: #2194d8;
+    background-color: #4ca5f4;
 }
 .no-phone{
     text-align: center;
@@ -176,7 +176,7 @@ body{
     width: 325px;
     height:50px;
     line-height: 25px;
-    background-color: #2194d8;
+    background-color: #4ca5f4;
 }
 /*info block settings*/
 .info-block{
@@ -198,14 +198,14 @@ body{
     height: 40px;
     padding: 15px 20px;
 }
-.ad-content, .teacher-content{
+.ad-content, .employee-content{
     padding: 15px 20px;
     min-height: 151px;
 }
 .ad-date-status{
     margin: 15px 0;
 }
-.ad-full-container .teacher-content, .ad-full-container .ad-content{
+.ad-full-container .employee-content, .ad-full-container .ad-content{
     height: auto !important;
 }
 .ad-admin-container .ad-content{
@@ -232,7 +232,7 @@ body{
     min-height: 50px;
 }
 
-.ad-footer, .teacher-footer{
+.ad-footer, .employee-footer{
     width: 100%;
     border-top: 1px solid #f2f2f2;
     display: flex;
@@ -279,28 +279,21 @@ body{
     width: 200px;
     text-align: center;
     font-size: 18px;
-    color: #2194d8;
+    color: #4ca5f4;
     font-weight: bold;
 }
-.yes-no-image{
-    width: 12px;
-    height: 12px;
-    object-fit: contain; 
-}
-.teacher-name{
+.employee-name{
     font-size: 14px;
     margin-bottom: 12px; 
-}
-.ad-date{
-    text-align: right;
-}
-.teacher-name{
-    font-weight: bold;
+        font-weight: bold;
     font-size: 16px;
     width: 300px;
     margin-bottom: 12px;
 }
-.teacher-experience{
+.ad-date{
+    text-align: right;
+}
+.employee-experience{
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -309,18 +302,18 @@ body{
 .bordered-bottom{
     border-bottom: 1px solid #f2f2f2;
 }
-.teacher-rating{
+.employee-rating{
     height: 25px;
     font-size: 25px;
     margin-bottom: 5px;
 }
-.teacher-footer .cell{
+.employee-footer .cell{
     width: 225px;
 }
 .ad-service, .ad-servdate{
     border: 1px solid #f2f2f2;
 }
-.teacher-footer .teacher-university{
+.employee-footer .employee-university{
     width: 227px;
     border-left: 1px solid #f2f2f2;
     border-right: 1px solid #f2f2f2;
@@ -382,19 +375,7 @@ a{
     margin: 20px 0;
     height: 50px;
 }
-.button-image{
-    width: 15px;
-    height: 15px;
-    object-fit: contain; 
-}
 /*headers*/
-.orange-header{
-    height: 50px;
-    background-color: #facb01;
-    width: 100%;
-    line-height: 50px;
-    font-size: 14px;
-}
 .header-container{
     padding: 0 16%;
     background-image: url(../img/header-background.png);
@@ -421,7 +402,7 @@ a{
     background-position: center center;
     height: 431px;
 }
-.header-bottom .howsmart-about, .header-bottom .howsmart-head{
+.header-bottom .hk-about, .header-bottom .hk-head{
     padding-bottom: 50px;
 }
 .promo-container{
@@ -440,12 +421,12 @@ a{
     justify-content: space-around;
     margin: auto;
 }
-.header-bottom .howsmart-head{
+.header-bottom .hk-head{
     padding-top: 75px;
     font-size: 30px;
     font-weight: bold;
 }
-.howsmart-about {
+.hk-about {
     font-size: 20px;
 }
 .extra-search-button{
@@ -667,7 +648,6 @@ a{
     display: flex;
 }
 .right-message {
-
     flex-direction: row-reverse;
 }
 .left-message {
@@ -723,9 +703,6 @@ a{
     font-weight: bold;
     font-size: 15px;
     margin: 50px 0;
-}
-.white-orange-href:hover{
-    color: #fcab01;
 }
 .login-container{
     width: 310px;

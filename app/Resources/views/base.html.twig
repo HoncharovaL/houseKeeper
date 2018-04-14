@@ -39,7 +39,7 @@
                                         {% if app.user.photo %}
                                             <img  class='user-menu-photo' src="{{photo_path}}{{app.user.photo}}">
                                         {% else %}
-                                            <img class='user-menu-photo' src="{{ asset('bundles/app/img/no-img.png') }}">
+                                            <img class='user-menu-photo no-avatar' src="{{ asset('bundles/app/img/avatar.png') }}">
                                         {% endif %}
                                         <div class='user-menu-name'>
                                             {{ app.user.name }}
