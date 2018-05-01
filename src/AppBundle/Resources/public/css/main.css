@@ -285,7 +285,7 @@ img.no-avatar{
 .employee-name{
     font-size: 14px;
     margin-bottom: 12px; 
-        font-weight: bold;
+    font-weight: bold;
     font-size: 16px;
     width: 300px;
     margin-bottom: 12px;
@@ -400,7 +400,8 @@ a{
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
-    height: 431px;
+    height: 506px;
+    margin: -75px;
 }
 .header-bottom .hk-about, .header-bottom .hk-head{
     padding-bottom: 50px;
@@ -422,7 +423,7 @@ a{
     margin: auto;
 }
 .header-bottom .hk-head{
-    padding-top: 75px;
+    padding-top: 150px;
     font-size: 30px;
     font-weight: bold;
 }
